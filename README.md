@@ -29,7 +29,7 @@ All the data used for training can be downloaded from [here](https://cbcl.ics.uc
 
 2. \*.seq files
 --------------
-**data_tr.seq** contains the 1,415,154 raw sequences with labels for training. It is a tab-delimited text file. The 1st column is the raw sequence, the 2nd column is the label with 1 = conserved, and 0 = non-conserved.
+**data_tr.seq** contains the 1,415,154 raw sequences with labels for training obtained based on **cons.bed** and **noncons.bed**. It is a tab-delimited text file. The 1st column is the raw sequence, the 2nd column is the label with 1 = conserved, and 0 = non-conserved.
 
 **data_va.seq** contains the 180,000 raw sequences with labels for validation. 
 
