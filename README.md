@@ -87,4 +87,6 @@ $ ./salience2html.py CTCF.salience > CTCF.html
 ```
 ![alt tag](https://github.com/uci-cbcl/DeepCons/blob/master/results/salience/CTCF.png)
 
-
+Other analysis
+--------------
+Other results presented in the paper, such as motif alignment with known motif databases using tomtom, positional bias analysis with respect to TSS, TES, miRNA using centrimo, motif clustering analysis using RSAT, can also be found in /results/
