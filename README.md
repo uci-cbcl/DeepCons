@@ -44,4 +44,21 @@ Numpy files that are ready for running `train_cnn.py` obtained based on \*.seq f
 
 TRAINING
 ========
-Training DeepCons is done by run `train_cnn.py`
+Training DeepCons is done by run `train_cnn.py`. A training example using 1000 convolutional kernels of 10 bp length, 500 convolutional kernels of 20 bp length, 1500 hidden units, 0.25 dropout rate for convolutional layer and 0.5 dropout rate for hidden layer is by:
+```
+$ ./train_cnn.py 1000+500x1500_0.25x0.5_10x20 1000 500 1500 0.25 0.5 10 20
+```
+In which, **1000+500x1500_0.25x0.5_10x20** is the base name for all the output files.
+
+OUTPUT
+======
+Each training instance will output 2 files. For example, by running 
+```
+$ ./train_cnn.py 1000+500x1500_0.25x0.5_10x20 1000 500 1500 0.25 0.5 10 20 
+```
+It outputs:
+
+**1000+500x1500_0.25x0.5_10x20.json**, the json file describing the model architecture used by keras.
+
+**1000+500x1500_0.25x0.5_10x20.hdf5**, the hdf5 file storing the model parameters used by keras.
+
