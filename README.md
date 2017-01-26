@@ -15,3 +15,28 @@ PREREQUISITES
 * [Scipy](http://www.scipy.org/)(>=0.17.0). 
 
 * [Theano](https://github.com/Theano/Theano/releases/tag/rel-0.8.2)(0.8.2).
+
+
+DATA
+====
+All the data used for training can be downloaded from [here](https://cbcl.ics.uci.edu/public_data/DeepCons/). It contains three levels of conserved sequences: (1). the coordinates of the conserved/non-conserved sequences in bed format; (2). the randomly shuffled raw sequences in text format based on (1); (3). the sequences in numpy format ready for training based on (2).
+
+1. \*.bed files 
+--------------
+**cons.bed** contains the 887,577 conserved sequences with length in range of [30, 1000] used in the paper (hg19). 
+
+**noncons.bed** contains the 887,577 non-conserved sequences obtained by randomly shuffling **cons.bed**.
+
+2. \*.seq files
+--------------
+**data_tr.seq** contains the 1,415,154 raw sequences with labels for training. It is a tab-delimited text file. The 1st column is the raw sequence, the 2nd column is the label with 1 = conserved, and 0 = non-conserved.
+
+**data_va.seq** contains the 180,000 raw sequences with labels for validation. 
+
+**data_te.seq** contains the 180,000 raw sequences with labels for testing. 
+
+3. \*.npy files
+--------------
+Numpy files that are ready for running `train_cnn.py` obtained based on \*.seq files. For X_\*_float32.npy, its shape is as (N, 2020, 4). N is the number of sequences (e.g. 180,000 for X_va_float32.npy). 2020 is the length of the sequences, where the first 1-1000 bp is the original sequence padded with letter ''N'', 1001-1020 is a gap also represented as letter ''N'', and 1021-2020 is the reverse complement of the original sequence padded with letter ''N''. 4 is the dimension of one hot encoding for A,C,G,T.
+
+
