@@ -62,3 +62,28 @@ It outputs:
 
 **1000+500x1500_0.25x0.5_10x20.hdf5**, the hdf5 file storing the model parameters used by keras.
 
+
+DOWNSTREAM ANALYSIS
+===================
+Once the training is completed, several downstream analysis can be performed based on the trained model.
+
+Motif
+-----
+Motif in MEME format can be obtained by running `filter2motif.py`
+```
+$ ./filter2motif.py X_tr_float32.npy 1000+500x1500_0.25x0.5_10x20
+```
+This will output **1000+500x1500_0.25x0.5_10x20.meme** based on the trained model **1000+500x1500_0.25x0.5_10x20.json/hdf5** and sequences in  **X_tr_float32.npy**. The MEME file used in the paper is in `results/meme/X_tr.meme`.
+
+Salience
+--------
+Salience score for a given sequence can be obtained by running `salience.py`
+```
+$ ./salience.py X_tr_float32.npy 1000+500x1500_0.25x0.5_10x20 X_tr.salience
+```
+This will output **X_tr.salience** based on the trained model **1000+500x1500_0.25x0.5_10x20.json/hdf5** and sequences in  **X_tr_float32.npy**. It is a tab-delimited text file. The 1st column is the raw sequence, the 2nd column is the comma-delimited salience scores for each bp. Examples can be found in `results/salience/`. Visualization in html format can be further obtained by running `salience2html.py`, for example
+```
+$ ./salience2html.py CTCF.salience > CTCF.html
+```
+
+
