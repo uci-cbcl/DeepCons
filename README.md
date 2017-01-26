@@ -85,5 +85,6 @@ This will output **X_tr.salience** based on the trained model **1000+500x1500_0.
 ```
 $ ./salience2html.py CTCF.salience > CTCF.html
 ```
+![alt tag](https://github.com/uci-cbcl/DeepCons/blob/master/results/salience/CTCF.png)
 
 
