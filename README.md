@@ -89,4 +89,4 @@ $ ./salience2html.py CTCF.salience > CTCF.html
 
 Other analysis
 --------------
-Other results presented in the paper, such as motif alignment with known motif databases using tomtom, positional bias analysis with respect to TSS, TES, miRNA using centrimo, motif clustering analysis using RSAT, can also be found in /results/
+Other results presented in the paper, such as motif alignment to known motif databases using tomtom, positional bias analysis with respect to TSS, TES, miRNA using centrimo, motif clustering analysis using RSAT, can also be found in /results/
