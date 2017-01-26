@@ -19,7 +19,7 @@ PREREQUISITES
 
 DATA
 ====
-All the data used for training can be downloaded from [here](https://cbcl.ics.uci.edu/public_data/DeepCons/). It contains three levels of conserved sequences: (1). the coordinates of the conserved/non-conserved sequences in bed format; (2). the randomly shuffled raw sequences in text format based on (1); (3). the sequences in numpy format ready for training based on (2).
+All the data used for training can be downloaded from [here](https://cbcl.ics.uci.edu/public_data/DeepCons/). It contains three levels of conserved sequences: (1). the coordinates of the conserved/non-conserved sequences in bed format; (2). the randomly shuffled raw sequences in text format based on (1); (3). the sequences in numpy format ready for training based on (2). Please use binary mode to download the numpy files(e.g. wget command), directly ftp download using browser may corrupt the binary numpy file. After downloading all the numpy files, please put them in the same folder with `train_cnn.py`.
 
 1. \*.bed files 
 --------------
@@ -40,3 +40,8 @@ All the data used for training can be downloaded from [here](https://cbcl.ics.uc
 Numpy files that are ready for running `train_cnn.py` obtained based on \*.seq files. For X_\*_float32.npy, its shape is as (N, 2020, 4). N is the number of sequences (e.g. 180,000 for X_va_float32.npy). 2020 is the length of the sequences, where the first 1-1000 bp is the original sequence padded with letter ''N'', 1001-1020 is a gap also represented as letter ''N'', and 1021-2020 is the reverse complement of the original sequence padded with letter ''N''. 4 is the dimension of one hot encoding for A,C,G,T.
 
 
+
+
+TRAINING
+========
+Training DeepCons is done by run `train_cnn.py`
