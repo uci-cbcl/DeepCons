@@ -91,3 +91,8 @@ $ ./salience2html.py CTCF.salience > CTCF.html
 Other analysis
 --------------
 Other results presented in the paper, such as motif alignment to known motif databases using tomtom, positional bias analysis with respect to TSS, TES, miRNA using centrimo, motif clustering analysis using RSAT, can also be found in /results/
+
+
+Reference
+=========
+Understanding sequence conservation with deep learning. Y Li, D Quang, X Xie. bioRxiv, 2017.
